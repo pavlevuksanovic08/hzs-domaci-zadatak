@@ -7,6 +7,7 @@
 }
 
 .card {
+    position: relative;
     padding: 12px;
     display: flex;
     flex-direction: column;
@@ -28,4 +29,35 @@
     margin: 0;
     color: #fff;
     font-weight: 600;
+}
+
+/* Checked overlay */
+.card .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.0);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    transition: background 160ms ease, opacity 160ms ease;
+    opacity: 0;
+}
+
+.card.checked {
+    background: linear-gradient(180deg, rgba(0,0,0,0.18), rgba(0,0,0,0.12));
+}
+
+.card.checked .overlay {
+    background: rgba(0,0,0,0.48);
+    opacity: 1;
+}
+
+.card .checkmark {
+    font-size: 1.8rem;
+    color: var(--text, #fff);
+    background: rgba(255,255,255,0.06);
+    border-radius: 999px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.24);
 }
