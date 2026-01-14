@@ -1,0 +1,31 @@
+.taskCard-placeholder {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 16px;
+    align-items: start;
+    width: 100%;
+}
+
+.card {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    min-height: 120px;
+    box-sizing: border-box;
+}
+
+.card img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.card p {
+    margin: 0;
+    color: #fff;
+    font-weight: 600;
+}
