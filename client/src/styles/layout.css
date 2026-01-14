@@ -1,0 +1,48 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+#root {
+    width: 100vw;
+    height: 100vh;
+}
+
+
+/* Keep the root full viewport so we can size fixed elements against it */
+#root {
+    position: relative;
+}
+
+/* Navigation on the left stays fixed */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 100vh;
+    background-color: #1d2137;
+    z-index: 20;
+}
+
+/* Header stays fixed at the top, to the right of the nav */
+header {
+    position: fixed;
+    top: 0;
+    left: 20%;
+    right: 0;
+    height: 20vh;
+    background-color: #272c45;
+    z-index: 25;
+}
+
+/* Main occupies the remaining area and becomes the scrolling container */
+main {
+    position: absolute;
+    top: 20vh; /* below the fixed header */
+    left: 20%;  /* to the right of the fixed nav */
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+    background-color: #272c45;
+}
