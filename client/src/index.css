@@ -1,11 +1,17 @@
 :root {
+  --bg: #242424;
+  --text: #F3F4F6;
+  --muted: #BFC5CE;
+  --accent: #FF7A00;
+  --card: rgba(255,255,255,0.03);
+
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: var(--text);
+  background-color: var(--bg);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -28,6 +34,32 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  color: var(--text);
+  background-color: var(--bg);
+}
+
+/* Aesthetic scrollbar for WebKit browsers */
+*::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+*::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.02);
+  border-radius: 12px;
+}
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ff8a00, #ff4a00);
+  border-radius: 12px;
+  border: 3px solid rgba(0,0,0,0.12);
+}
+*::-webkit-scrollbar-thumb:hover {
+  transform: scale(1.02);
+}
+
+/* Firefox scrollbar styling */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #ff7a00 rgba(255,255,255,0.02);
 }
 
 h1 {
