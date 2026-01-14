@@ -7,13 +7,17 @@ import "./styles/layout.css"
 
 function App() {
 
-  const [mainPage, setMainPage] = useState("goals")
+  const [mainPage, setMainPage] = useState("goals");
+
+  function changeMainPage(page) {
+    setMainPage(page);
+  }
 
   return (
     <>
       <Header />
-      <Menu />
-      <Main />
+      <Menu changeMainPage={changeMainPage} />
+      <Main state={mainPage}/>
     </>
   )
 }
