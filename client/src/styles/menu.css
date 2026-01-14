@@ -1,0 +1,53 @@
+
+.navItem {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    column-gap: 12px;
+    align-items: center;
+    width: 100%;
+    padding: 8px 0;
+}
+
+nav > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 220px; /* adjust as needed */
+    margin: 0 auto;
+}
+
+.navIcon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    justify-self: center;
+    display: block;
+}
+
+/* Ensure menu icons are visible on dark backgrounds */
+.navIcon,
+.logo img,
+.navItem img {
+    filter: brightness(0) saturate(100%) invert(100%);
+}
+
+/* If SVGs are used, make sure their fill uses the CSS variable */
+.navIcon svg,
+.navItem svg {
+    fill: var(--text);
+}
+
+.navText {
+    text-align: left;
+}
+
+hr {
+    width: 100%;
+}
+
+.logo {
+    width: 96px;
+    height: auto;
+    display: block;
+    margin: 12px auto;
+}
