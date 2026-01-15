@@ -17,6 +17,9 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Responsive font sizes */
+  font-size: clamp(14px, 2vw, 16px);
 }
 
 a {
@@ -63,8 +66,16 @@ body {
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: clamp(2.4em, 5vw, 3.2em);
   line-height: 1.1;
+}
+
+h2 {
+  font-size: clamp(1.8em, 4vw, 2.4em);
+}
+
+h3 {
+  font-size: clamp(1.4em, 3vw, 1.8em);
 }
 
 button {
@@ -84,6 +95,66 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Mobile-first media queries */
+@media (max-width: 480px) {
+  :root {
+    font-size: 13px;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  h3 {
+    font-size: 1.2em;
+  }
+
+  button {
+    padding: 0.5em 1em;
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 2.2em;
+  }
+
+  h2 {
+    font-size: 1.6em;
+  }
+
+  h3 {
+    font-size: 1.3em;
+  }
+}
+
+@media (max-width: 1024px) {
+  :root {
+    font-size: 15px;
+  }
+
+  h1 {
+    font-size: 2.6em;
+  }
+
+  h2 {
+    font-size: 1.8em;
+  }
+
+  h3 {
+    font-size: 1.4em;
+  }
 }
 
 @media (prefers-color-scheme: light) {

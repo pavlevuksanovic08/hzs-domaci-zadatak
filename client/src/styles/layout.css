@@ -23,6 +23,7 @@ nav {
     height: 100vh;
     background-color: #1d2137;
     z-index: 20;
+    overflow-y: auto;
 }
 
 /* Header stays fixed at the top, to the right of the nav */
@@ -45,4 +46,62 @@ main {
     bottom: 0;
     overflow: auto;
     background-color: #272c45;
+}
+
+/* Tablet devices: reduce nav width */
+@media (max-width: 1024px) {
+    nav {
+        width: 25%;
+    }
+    header {
+        left: 25%;
+    }
+    main {
+        left: 25%;
+    }
+}
+
+/* Small tablets and large phones: convert nav to collapsible */
+@media (max-width: 768px) {
+    nav {
+        width: 70vw;
+        max-width: 280px;
+        transform: translateX(-100%);
+        transition: transform 300ms ease;
+        overflow-y: auto;
+        z-index: 30;
+    }
+
+    nav.active {
+        transform: translateX(0);
+    }
+
+    header {
+        left: 0;
+        height: 16vh;
+        z-index: 25;
+    }
+
+    main {
+        left: 0;
+        top: 16vh;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+    nav {
+        width: 100vw;
+        max-width: 100vw;
+        z-index: 30;
+    }
+
+    header {
+        height: 14vh;
+        z-index: 25;
+    }
+
+    main {
+        top: 14vh;
+    }
 }

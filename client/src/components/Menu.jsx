@@ -5,11 +5,11 @@ import profileImg from "../assets/user.png"
 import logoutImg from "../assets/logout.png"
 import "../styles/menu.css"
 
-export default function Menu({ changeMainPage }) {
+export default function Menu({ changeMainPage, menuOpen }) {
 
     return (
         <>
-            <nav aria-label="Main navigation">
+            <nav className={`${menuOpen ? 'active' : ''}`} aria-label="Main navigation">
                 <img alt="logoImg" className="logo" />
                 <div>
                     <NavItem img={goalsImg} text="Goals" onClick={() => changeMainPage("goals")} />

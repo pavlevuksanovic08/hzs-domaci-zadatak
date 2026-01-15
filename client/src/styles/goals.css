@@ -80,6 +80,7 @@
     padding: 12px;
     box-shadow: 0 8px 24px rgba(12,12,12,0.06);
     font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    font-size: 14px;
 }
 
 .streakCalendar .react-calendar__navigation {
@@ -92,6 +93,7 @@
     color: #333;
     font-weight: 700;
     padding: 6px 8px;
+    font-size: 14px;
 }
 
 .streakCalendar .react-calendar__month-view__weekdays {
@@ -105,6 +107,7 @@
     border-radius: 8px;
     padding: 8px 6px;
     transition: background 160ms ease, transform 120ms ease;
+    font-size: 12px;
 }
 
 .streakCalendar .react-calendar__tile:hover {
@@ -132,10 +135,166 @@
     box-shadow: inset 0 0 0 1px rgba(255,140,0,0.16);
 }
 
-@media (max-width: 760px) {
+/* Tablet devices */
+@media (max-width: 1024px) {
+    .goals {
+        padding: 4%;
+        gap: 20px;
+    }
+
+    .tasks {
+        grid-template-columns: 55% 45%;
+        gap: 16px;
+    }
+
+    .streakCalendar {
+        grid-template-columns: 35% 65%;
+        gap: 16px;
+    }
+
+    .streak-number {
+        font-size: 2.2rem;
+    }
+
+    .streak-calendar-wrapper {
+        margin: auto 5%;
+        margin-left: 0%;
+    }
+
+    .streakCalendar .react-calendar {
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    .streakCalendar .react-calendar__tile {
+        font-size: 11px;
+        padding: 6px 4px;
+    }
+
+    .streakCalendar .react-calendar__navigation button {
+        font-size: 13px;
+        padding: 4px 6px;
+    }
+}
+
+/* Small tablets and large phones */
+@media (max-width: 768px) {
+    .goals {
+        padding: 4%;
+        gap: 20px;
+    }
+
+    .dailyGoals {
+        padding: 3%;
+    }
+
+    .tasks {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
     .streakCalendar {
         grid-template-columns: 1fr;
-        gap: 14px;
+        gap: 16px;
     }
-    .streak-card { width: 100%; min-height: auto; }
+
+    .streak-card {
+        min-height: 200px;
+    }
+
+    .streak-number {
+        font-size: 2rem;
+    }
+
+    .streak-calendar-wrapper {
+        margin: 0;
+        width: 100%;
+        padding: 0 2%;
+        box-sizing: border-box;
+    }
+
+    .streakCalendar .react-calendar {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .streakCalendar .react-calendar__tile {
+        font-size: 10px;
+        padding: 5px 3px;
+    }
+
+    .streakCalendar .react-calendar__navigation button {
+        font-size: 12px;
+        padding: 4px 4px;
+    }
+
+    .streakCalendar .react-calendar__month-view__weekdays {
+        font-size: 0.65rem;
+        margin-bottom: 4px;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+    .goals {
+        padding: 3%;
+        gap: 16px;
+    }
+
+    .dailyGoals {
+        padding: 3%;
+        border-radius: 8px;
+    }
+
+    .tasks {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .streakCalendar {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 3%;
+        border-radius: 8px;
+    }
+
+    .streak-card {
+        min-height: 180px;
+        padding: 12px;
+    }
+
+    .streak-number {
+        font-size: 1.8rem;
+        margin-top: 8px;
+    }
+
+    .streak-calendar-wrapper {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .streakCalendar .react-calendar {
+        padding: 6px;
+        font-size: 11px;
+    }
+
+    .streakCalendar .react-calendar__tile {
+        padding: 4px 2px;
+        font-size: 9px;
+    }
+
+    .streakCalendar .react-calendar__navigation {
+        margin-bottom: 6px;
+    }
+
+    .streakCalendar .react-calendar__navigation button {
+        font-size: 11px;
+        padding: 3px 3px;
+    }
+
+    .streakCalendar .react-calendar__month-view__weekdays {
+        font-size: 0.6rem;
+        margin-bottom: 2px;
+    }
 }

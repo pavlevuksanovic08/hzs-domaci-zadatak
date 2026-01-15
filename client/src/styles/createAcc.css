@@ -192,24 +192,128 @@
     background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
 }
 
-@media (max-width: 600px) {
-    .createacc-main {
-        left: 0;
-    }
-
+/* Tablet devices */
+@media (max-width: 1024px) {
     .createacc-card {
-        padding: 24px;
+        padding: 32px;
     }
 
     .createacc-title {
-        font-size: 22px;
+        font-size: 26px;
+        margin-bottom: 24px;
+    }
+}
+
+/* Small tablets and large phones */
+@media (max-width: 768px) {
+    .createacc-container {
+        padding: 4%;
+        align-items: center;
+    }
+
+    .createacc-card {
+        padding: 28px;
+        max-width: 100%;
+        margin-bottom: 32px;
+    }
+
+    .createacc-title {
+        font-size: 24px;
+        margin-bottom: 22px;
+    }
+
+    .createacc-form {
+        gap: 20px;
     }
 
     .form-row {
         grid-template-columns: 1fr;
+        gap: 14px;
     }
 
     .categories-container {
         grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .image-upload-wrapper {
+        height: 120px;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+    .createacc-main {
+        left: 0;
+    }
+
+    .createacc-container {
+        padding: 3%;
+        align-items: center;
+    }
+
+    .createacc-card {
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 24px;
+    }
+
+    .createacc-title {
+        font-size: 20px;
+        margin-bottom: 18px;
+    }
+
+    .createacc-form {
+        gap: 16px;
+    }
+
+    .form-section {
+        gap: 6px;
+    }
+
+    .form-label {
+        font-size: 11px;
+    }
+
+    .form-input {
+        padding: 8px 12px;
+        font-size: 13px;
+        border-radius: 6px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .categories-container {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .category-checkbox {
+        padding: 8px 10px;
+        font-size: 13px;
+        border-radius: 6px;
+    }
+
+    .category-checkbox input[type="checkbox"] {
+        width: 14px;
+        height: 14px;
+    }
+
+    .image-upload-wrapper {
+        height: 100px;
+        border-radius: 8px;
+    }
+
+    .image-placeholder span {
+        font-size: 28px;
+    }
+
+    .submit-button {
+        padding: 10px 20px;
+        font-size: 13px;
+        margin-top: 10px;
     }
 }

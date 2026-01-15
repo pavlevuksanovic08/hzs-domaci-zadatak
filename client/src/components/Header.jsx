@@ -1,10 +1,13 @@
 
 import "../styles/header.css";
 
-export default function Header({ state }) {
+export default function Header({ state, menuOpen, onToggleMenu }) {
     return (
         <header>
-            <div>
+            <button className="menu-toggle" onClick={onToggleMenu} aria-label="Toggle menu">
+                <span className={`hamburger ${menuOpen ? 'active' : ''}`}></span>
+            </button>
+            <div className="header-title">
                 {state === "goals" ?        
                     <h1>Goals Dashboard</h1>
                     : state === "statistics" ?
