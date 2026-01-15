@@ -4,9 +4,11 @@ import Menu from './components/Menu'
 import Main from './components/Main'
 import './App.css'
 import "./styles/layout.css"
+import CreateAcc from './components/CreateAcc'
 
 function App() {
 
+  const userID = localStorage.getItem("userID") || null;
   const [mainPage, setMainPage] = useState("goals");
 
   function changeMainPage(page) {
@@ -15,9 +17,12 @@ function App() {
 
   return (
     <>
-      <Header />
-      <Menu changeMainPage={changeMainPage} />
-      <Main state={mainPage}/>
+      {userID ?
+      <>
+        <Header state={mainPage} />
+        <Menu changeMainPage={changeMainPage} />
+        <Main state={mainPage}/>
+      </> : <CreateAcc />}
     </>
   )
 }
