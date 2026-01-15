@@ -1,0 +1,199 @@
+
+.navItem {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    column-gap: 12px;
+    align-items: center;
+    width: 100%;
+    padding: 8px 0;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 200ms ease;
+    border-radius: 6px;
+    margin: 0 -4px;
+    padding: 8px 4px;
+}
+
+.navItem:hover {
+    background-color: rgba(255, 122, 0, 0.1);
+    transform: translateX(4px);
+}
+
+.navItem:active {
+    background-color: rgba(255, 122, 0, 0.15);
+    transform: translateX(2px);
+}
+
+nav > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 220px; /* adjust as needed */
+    margin: 0 auto;
+}
+
+.navIcon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    justify-self: center;
+    display: block;
+    transition: filter 200ms ease;
+}
+
+.navItem:hover .navIcon {
+    filter: brightness(0) saturate(100%) invert(100%) drop-shadow(0 0 4px rgba(255, 122, 0, 0.4));
+}
+
+/* Ensure menu icons are visible on dark backgrounds */
+.navIcon,
+.logo img,
+.navItem img {
+    filter: brightness(0) saturate(100%) invert(100%);
+}
+
+/* If SVGs are used, make sure their fill uses the CSS variable */
+.navIcon svg,
+.navItem svg {
+    fill: var(--text);
+}
+
+.navText {
+    text-align: left;
+    transition: color 200ms ease;
+    font-weight: 500;
+}
+
+.navItem:hover .navText {
+    color: #ff7a00;
+}
+
+hr {
+    width: 100%;
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 8px 0;
+}
+
+.logo {
+    width: 96px;
+    height: auto;
+    display: block;
+    margin: 12px auto;
+}
+
+/* Tablet: adjust nav width */
+@media (max-width: 1024px) {
+    nav > div {
+        width: 100%;
+        padding: 0 16px;
+    }
+
+    .navItem {
+        padding: 10px 8px;
+        font-size: 13px;
+    }
+
+    .navIcon {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* Small tablets and large phones: slide-out menu */
+@media (max-width: 768px) {
+    nav {
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        width: 70vw;
+        max-width: 280px;
+        height: 100vh;
+        transform: translateX(-100%);
+        transition: transform 300ms ease;
+        z-index: 19;
+        overflow-y: auto;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    nav.active {
+        transform: translateX(0);
+    }
+
+    nav > div {
+        width: 100%;
+        padding: 0 12px;
+    }
+
+    .navItem {
+        padding: 12px 8px;
+        font-size: 14px;
+        grid-template-columns: 40px 1fr;
+    }
+
+    .navIcon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .logo {
+        width: 80px;
+    }
+
+    hr {
+        margin: 8px 0;
+    }
+}
+
+/* Mobile phones: full width menu */
+@media (max-width: 480px) {
+    nav {
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        max-width: 100vw;
+        height: 100vh;
+        transform: translateX(-100%);
+        transition: transform 300ms ease;
+        z-index: 19;
+        overflow-y: auto;
+        box-shadow: none;
+    }
+
+    nav.active {
+        transform: translateX(0);
+    }
+
+    nav > div {
+        width: 100%;
+        padding: 0 12px;
+    }
+
+    .navItem {
+        padding: 12px 8px;
+        grid-template-columns: 40px 1fr;
+    }
+
+    .logo {
+        width: 72px;
+        margin: 10px auto;
+    }
+}
+
+/* Backdrop overlay when menu is open */
+@media (max-width: 768px) {
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 300ms ease;
+        z-index: 18;
+    }
+}

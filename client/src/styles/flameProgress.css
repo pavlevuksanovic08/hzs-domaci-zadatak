@@ -1,0 +1,59 @@
+.flame-progress {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 120px;
+}
+
+.flame-wrap {
+  position: relative;
+  width: 100%;
+  height: 160px; /* container height for the flame image */
+}
+.flame {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Gray (unfilled) layer sits below and covers the whole flame */
+.flame-gray {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  filter: grayscale(100%);
+  overflow: hidden;
+}
+
+/* The fill wrapper clips the colored flame image to show only the bottom portion */
+.flame-fill {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: var(--progress, 0%) !important; /* visible fill percentage */
+  overflow: hidden;
+}
+
+.flame-color {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom center;
+  /* clip-path fallback: clip the top so only the bottom var(--progress) remains visible */
+  clip-path: inset(calc(100% - var(--progress, 0%)) 0 0 0);
+  -webkit-clip-path: inset(calc(100% - var(--progress, 0%)) 0 0 0);
+}
+
+.percent {
+  text-align: center;
+  margin-top: 8px;
+  font-weight: bold;
+}
