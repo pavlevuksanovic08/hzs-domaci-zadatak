@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import '../styles/createAcc.css';
+import { api } from '../services/api';
 
 export default function CreateAcc() {
     const [formData, setFormData] = useState({
@@ -46,10 +47,21 @@ export default function CreateAcc() {
         }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log('Form submitted:', formData);
-        // Add submit functionality here
+        try {
+            const response = await api.createUser({
+                first_name: formData.firstName,
+                last_name: formData.lastName,
+                gender: 'M',
+                date_of_birth: formData.dateOfBirth
+            });
+            
+            localStorage.setItem('userID', response.user_id);
+            window.location.href = '/dashboard';
+        } catch (error) {
+            console.error('Error:', error);
+        }
     };
 
     return (

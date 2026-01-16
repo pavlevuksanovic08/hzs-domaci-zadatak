@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { sql, poolPromise } = require('../../server/db');
+const { sql, poolPromise } = require('../db');  // ← Promijeni ovo!
 
 router.post('/', async (req, res) => {
   const { first_name, last_name, gender, date_of_birth } = req.body;
